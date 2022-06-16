@@ -52,7 +52,11 @@ viewMainProduct =
 viewAddButton : Html Msg
 viewAddButton =
     div []
-        [ button [] [ text "AGGIUNGI AL CARRELLO" ]
+        [ button
+            [ class "add-button"
+            , class "add-button-font"
+            ]
+            [ text "AGGIUNGI AL CARRELLO" ]
         ]
 
 

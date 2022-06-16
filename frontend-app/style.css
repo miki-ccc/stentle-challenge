@@ -4,3 +4,26 @@
     text-align: center;
     border: 2px red solid;
 }
+
+.add-button-font {
+    color: #171717;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Roboto;
+}
+
+.add-button {
+    width: 90%;
+    height: 40px;
+    border: none;
+    border-radius: 3px;
+    background-color: #ffea00;
+}
+
+.add-button:hover {
+    background-color: #fff159;
+}
+
+.add-button:active {
+    background-color: #baab00;
+}
