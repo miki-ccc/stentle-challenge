@@ -76,3 +76,14 @@
     font-weight: 500;
     font-family: Roboto;
 }
+
+.description {
+    max-width: 80%;
+    margin: 0 auto;
+
+    white-space: normal;
+    color: #171717;
+    font-size: 8px;
+    font-weight: 400;
+    font-family: Roboto;
+}

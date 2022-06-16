@@ -91,7 +91,7 @@ viewCard product =
         [ div [] [ img [ width 110, height 90, src product.imgUrl ] [] ]
         , div [ class "price-bg" ] [ div [ class "price" ] [ text "249.99€" ] ]
         , div [ class "name" ] [ text product.name ]
-        , div [] [ text "description" ]
+        , div [ class "description" ] [ text product.description ]
         , div [] [ text "review" ]
         ]
 

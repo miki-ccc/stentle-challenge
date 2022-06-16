@@ -15,4 +15,4 @@ mk name imgUrl =
 
 defaultDescription : String
 defaultDescription =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur vel massa a consectetur. Mauris lobortis, nisl sed scelerisque imperdiet, nulla tortor accumsan velit, ac posuere elit tortor ac ante. Sed hendrerit odio in magna lobortis."
+    "Mtb bambino 9-12 anni ROCKRIDER ST 500 arancione 26"
