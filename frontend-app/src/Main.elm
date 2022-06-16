@@ -46,7 +46,8 @@ view model =
 
 viewMainProduct : Html Msg
 viewMainProduct =
-    div [] [ text "Main product" ]
+    div [ class "main-product" ]
+        []
 
 
 viewAddButton : Html Msg

@@ -5,6 +5,11 @@
     border: 2px red solid;
 }
 
+.main-product {
+    height: 150px;
+    margin-bottom: 20px;
+}
+
 .add-button-font {
     color: #171717;
     font-size: 14px;
