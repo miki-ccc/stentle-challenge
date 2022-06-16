@@ -4,7 +4,6 @@ import Browser
 import Domain.Model.Product as Product exposing (Product)
 import Html exposing (..)
 import Html.Attributes exposing (class)
-import Html.Events exposing (..)
 
 
 
