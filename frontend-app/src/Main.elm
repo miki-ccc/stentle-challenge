@@ -27,6 +27,10 @@ initModel =
         , Product.mk "product 3"
         , Product.mk "product 4"
         , Product.mk "product 5"
+        , Product.mk "product 6"
+        , Product.mk "product 7"
+        , Product.mk "product 8"
+        , Product.mk "product 9"
         ]
     }
 
