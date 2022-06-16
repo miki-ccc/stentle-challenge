@@ -22,15 +22,15 @@ type alias Model =
 initModel : Model
 initModel =
     { relatedProducts =
-        [ Product.mk "product 1"
-        , Product.mk "product 2"
-        , Product.mk "product 3"
-        , Product.mk "product 4"
-        , Product.mk "product 5"
-        , Product.mk "product 6"
-        , Product.mk "product 7"
-        , Product.mk "product 8"
-        , Product.mk "product 9"
+        [ Product.mk "product 1" images.clock
+        , Product.mk "product 2" images.laptop
+        , Product.mk "product 3" images.camera
+        , Product.mk "product 4" images.strawberries
+        , Product.mk "product 5" images.laptop
+        , Product.mk "product 6" images.clock
+        , Product.mk "product 7" images.strawberries
+        , Product.mk "product 8" images.camera
+        , Product.mk "product 9" images.clock
         ]
     }
 
@@ -88,7 +88,7 @@ viewCarousel products =
 viewCard : Product -> Html Msg
 viewCard product =
     div [ class "card-wrapper" ]
-        [ div [] [ img [ width 110, height 90, src "" ] [] ]
+        [ div [] [ img [ width 110, height 90, src product.imgUrl ] [] ]
         , div [] [ text "price" ]
         , div [] [ text "name" ]
         , div [] [ text "description" ]
@@ -122,3 +122,15 @@ main =
         , view = view
         , update = update
         }
+
+
+
+-- IMAGES
+
+
+images =
+    { clock = "https://i.picsum.photos/id/357/3888/2592.jpg?hmac=322FsZ93_k9v7NNFeCTlqk_gobPP_1mYJIQwk7GxjMc"
+    , laptop = "https://i.picsum.photos/id/2/5616/3744.jpg?hmac=l1XcSPFigtRLcO2F6Li-t17EIeylkWH94Oowb4vzApk"
+    , camera = "https://i.picsum.photos/id/250/4928/3264.jpg?hmac=4oIwzXlpK4KU3wySTnATICCa4H6xwbSGifrxv7GafWU"
+    , strawberries = "https://i.picsum.photos/id/1080/6858/4574.jpg?hmac=qMYBjROs2Wu589QQXRAYsxDJu4ZuRQ4PKDpb3x_Oouw"
+    }

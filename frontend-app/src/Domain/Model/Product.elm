@@ -3,13 +3,14 @@ module Domain.Model.Product exposing (Product, mk)
 
 type alias Product =
     { name : String
+    , imgUrl : String
     , description : String
     }
 
 
-mk : String -> Product
-mk name =
-    Product name defaultDescription
+mk : String -> String -> Product
+mk name imgUrl =
+    Product name imgUrl defaultDescription
 
 
 defaultDescription : String
