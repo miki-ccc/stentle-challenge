@@ -5,12 +5,14 @@ type alias Product =
     { name : String
     , imgUrl : String
     , description : String
+    , rating : Int
+    , numOfReviews : Int
     }
 
 
 mk : String -> String -> Product
 mk name imgUrl =
-    Product name imgUrl defaultDescription
+    Product name imgUrl defaultDescription 3 155
 
 
 defaultDescription : String
