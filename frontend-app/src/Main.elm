@@ -127,13 +127,21 @@ viewCard : Product -> Html Msg
 viewCard product =
     div [ class "card-wrapper" ]
         [ div [] [ img [ width 110, height 90, src product.imgUrl ] [] ]
-        , div [ class "product-price-bg" ] [ div [ class "product-price" ] [ text <| (String.fromFloat <| Price.toFloat product.price) ++ "€" ] ]
+        , div [ class "product-price-wrapper" ] [ viewPrice product.price ]
         , div [ class "product-name" ] [ text product.name ]
         , div [ class "product-description" ] [ text product.description ]
         , div [ class "reviews-wrapper" ]
             [ div [] [ viewStarRating product.rating ]
             , div [] [ viewReviews product.numOfReviews ]
             ]
+        ]
+
+
+viewPrice : Price -> Html Msg
+viewPrice price =
+    div [ class "product-price-bg" ]
+        [ div [ class "product-price" ]
+            [ text <| (String.fromFloat <| Price.toFloat price) ++ "€" ]
         ]
 
 

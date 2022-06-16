@@ -61,6 +61,10 @@
 
 /* === Product === */
 
+.product-price-wrapper {
+    margin: 12px 0 12px 0;
+}
+
 .product-price-bg {
     border-radius: 2px;
     display: inline-block;
