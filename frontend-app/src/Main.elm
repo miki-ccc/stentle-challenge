@@ -25,8 +25,12 @@ type alias Model =
 initModel : Model
 initModel =
     { relatedProducts =
-        [ initClock
-        , initClock
+        [ bike1
+        , bike2
+        , bike1
+        , bike2
+        , bike1
+        , bike2
         ]
             |> List.filter (\mVal -> isJust mVal)
             |> List.map (\mVal -> toList mVal)
@@ -52,19 +56,6 @@ toList mVal =
 
         Nothing ->
             []
-
-
-initClock : Maybe Product
-initClock =
-    Maybe.map3
-        (Product.mk
-            "BTWIN"
-            images.clock
-            "Mtb bambino 9-12 anni ROCKRIDER ST 500 arancione 26"
-        )
-        (Price.mk 199.99)
-        (Rating.mk 3)
-        (NumOfReviews.mk 135)
 
 
 
@@ -126,7 +117,7 @@ viewCarousel products =
 viewCard : Product -> Html Msg
 viewCard product =
     div [ class "card-wrapper" ]
-        [ div [] [ img [ width 110, height 90, src product.imgUrl ] [] ]
+        [ div [ class "product-image-wrapper" ] [ viewImage product.imgUrl ]
         , div [ class "product-price-wrapper" ] [ viewPrice product.price ]
         , div [ class "product-name" ] [ text product.name ]
         , div [ class "product-description" ] [ text product.description ]
@@ -135,6 +126,11 @@ viewCard product =
             , div [] [ viewReviews product.numOfReviews ]
             ]
         ]
+
+
+viewImage : String -> Html Msg
+viewImage imgUrl =
+    img [ width 85, height 60, src imgUrl ] []
 
 
 viewPrice : Price -> Html Msg
@@ -197,12 +193,30 @@ main =
 
 
 
--- IMAGES
+-- RESOURCES
 
 
-images =
-    { clock = "https://i.picsum.photos/id/357/3888/2592.jpg?hmac=322FsZ93_k9v7NNFeCTlqk_gobPP_1mYJIQwk7GxjMc"
-    , laptop = "https://i.picsum.photos/id/2/5616/3744.jpg?hmac=l1XcSPFigtRLcO2F6Li-t17EIeylkWH94Oowb4vzApk"
-    , camera = "https://i.picsum.photos/id/250/4928/3264.jpg?hmac=4oIwzXlpK4KU3wySTnATICCa4H6xwbSGifrxv7GafWU"
-    , strawberries = "https://i.picsum.photos/id/1080/6858/4574.jpg?hmac=qMYBjROs2Wu589QQXRAYsxDJu4ZuRQ4PKDpb3x_Oouw"
-    }
+bike1 : Maybe Product
+bike1 =
+    Maybe.map3
+        (Product.mk
+            "BTWIN"
+            "https://p.vitalmtb.com/photos/users/109/photos/56204/s600_origin_primeiro_3Q.jpg"
+            "Mtb bambino 5-10 anni ROCKRIDER ST 500 arancione 26\""
+        )
+        (Price.mk 199.99)
+        (Rating.mk 3)
+        (NumOfReviews.mk 115)
+
+
+bike2 : Maybe Product
+bike2 =
+    Maybe.map3
+        (Product.mk
+            "SUPER"
+            "https://purepng.com/public/uploads/large/sports-bicycle-hwk.png"
+            "Mtb bambino 9-12 anni ROCKRIDER ST 550 azzurra 28\""
+        )
+        (Price.mk 249.99)
+        (Rating.mk 4.5)
+        (NumOfReviews.mk 174)
