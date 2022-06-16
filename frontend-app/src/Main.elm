@@ -101,7 +101,22 @@ viewCard product =
 
 viewStarRating : Int -> Html Msg
 viewStarRating rating =
-    div [] [ text <| String.fromInt rating ]
+    div []
+        [ star
+        , star
+        , star
+        , star
+        , star
+        ]
+
+
+star : Html Msg
+star =
+    Html.i
+        [ class "material-icons"
+        , class "star"
+        ]
+        [ text "star" ]
 
 
 viewReviews : Int -> Html Msg
