@@ -1,8 +1,6 @@
 .page-wrapper {
     margin: 0 auto;
-    max-width: 600px;
     text-align: center;
-    border: 2px red solid;
 }
 
 .main-product {
@@ -46,6 +44,7 @@
 .add-button {
     width: 90%;
     height: 40px;
+    max-width: 400px;
     border: none;
     border-radius: 3px;
     background-color: #ffea00;
