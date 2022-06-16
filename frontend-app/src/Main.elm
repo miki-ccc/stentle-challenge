@@ -1,6 +1,7 @@
 module Main exposing (main)
 
 import Browser
+import Domain.Model.Product as Product exposing (Product)
 import Html exposing (..)
 import Html.Events exposing (..)
 
@@ -11,6 +12,7 @@ import Html.Events exposing (..)
 
 type alias Model =
     { value : Int
+    , relatedProducts : List Product
     }
 
 
@@ -18,9 +20,16 @@ type alias Model =
 -- INIT
 
 
-initialModel : Model
-initialModel =
+initModel : Model
+initModel =
     { value = 0
+    , relatedProducts =
+        [ Product.mk "product 1"
+        , Product.mk "product 2"
+        , Product.mk "product 3"
+        , Product.mk "product 4"
+        , Product.mk "product 5"
+        ]
     }
 
 
@@ -63,7 +72,7 @@ update msg model =
 main : Program () Model Msg
 main =
     Browser.sandbox
-        { init = initialModel
+        { init = initModel
         , view = view
         , update = update
         }
