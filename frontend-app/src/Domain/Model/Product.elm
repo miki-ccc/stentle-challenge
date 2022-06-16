@@ -1,20 +1,24 @@
 module Domain.Model.Product exposing (Product, mk)
 
+import Domain.Model.Price as Price exposing (Price)
+
 
 type alias Product =
     { name : String
     , imgUrl : String
     , description : String
+    , price : Price
     , rating : Int
     , numOfReviews : Int
     }
 
 
-mk : String -> String -> Product
-mk name imgUrl =
-    Product name imgUrl defaultDescription 3 155
-
-
-defaultDescription : String
-defaultDescription =
-    "Mtb bambino 9-12 anni ROCKRIDER ST 500 arancione 26"
+mk : String -> String -> String -> Price -> Product
+mk name imgUrl description price =
+    Product
+        name
+        imgUrl
+        description
+        price
+        3
+        155

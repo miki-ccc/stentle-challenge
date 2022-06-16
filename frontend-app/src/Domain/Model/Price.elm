@@ -1,4 +1,4 @@
-module Domain.Model.Price exposing (Price, mk)
+module Domain.Model.Price exposing (Price, mk, toFloat)
 
 
 type Price
@@ -12,3 +12,8 @@ mk val =
 
     else
         Nothing
+
+
+toFloat : Price -> Float
+toFloat (Price val) =
+    val

@@ -1,6 +1,7 @@
 module Main exposing (main)
 
 import Browser
+import Domain.Model.Price as Price exposing (Price)
 import Domain.Model.Product as Product exposing (Product)
 import Html exposing (..)
 import Html.Attributes exposing (class, height, src, width)
@@ -22,17 +23,44 @@ type alias Model =
 initModel : Model
 initModel =
     { relatedProducts =
-        [ Product.mk "BTWIN" images.clock
-        , Product.mk "BTWIN" images.laptop
-        , Product.mk "BTWIN" images.camera
-        , Product.mk "BTWIN" images.strawberries
-        , Product.mk "BTWIN" images.laptop
-        , Product.mk "BTWIN" images.clock
-        , Product.mk "BTWIN" images.strawberries
-        , Product.mk "BTWIN" images.camera
-        , Product.mk "BTWIN" images.clock
+        [ initClock
+        , initClock
         ]
+            |> List.filter (\mVal -> isJust mVal)
+            |> List.map (\mVal -> toList mVal)
+            |> List.concat
     }
+
+
+isJust : Maybe a -> Bool
+isJust m =
+    case m of
+        Nothing ->
+            False
+
+        Just _ ->
+            True
+
+
+toList : Maybe a -> List a
+toList mVal =
+    case mVal of
+        Just val ->
+            [ val ]
+
+        Nothing ->
+            []
+
+
+initClock : Maybe Product
+initClock =
+    Maybe.map
+        (Product.mk
+            "BTWIN"
+            images.clock
+            "Mtb bambino 9-12 anni ROCKRIDER ST 500 arancione 26"
+        )
+        (Price.mk 199.99)
 
 
 
@@ -89,7 +117,7 @@ viewCard : Product -> Html Msg
 viewCard product =
     div [ class "card-wrapper" ]
         [ div [] [ img [ width 110, height 90, src product.imgUrl ] [] ]
-        , div [ class "product-price-bg" ] [ div [ class "product-price" ] [ text "249.99€" ] ]
+        , div [ class "product-price-bg" ] [ div [ class "product-price" ] [ text <| (String.fromFloat <| Price.toFloat product.price) ++ "€" ] ]
         , div [ class "product-name" ] [ text product.name ]
         , div [ class "product-description" ] [ text product.description ]
         , div [ class "reviews-wrapper" ]
