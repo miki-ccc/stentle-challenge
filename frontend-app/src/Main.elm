@@ -22,15 +22,15 @@ type alias Model =
 initModel : Model
 initModel =
     { relatedProducts =
-        [ Product.mk "product 1" images.clock
-        , Product.mk "product 2" images.laptop
-        , Product.mk "product 3" images.camera
-        , Product.mk "product 4" images.strawberries
-        , Product.mk "product 5" images.laptop
-        , Product.mk "product 6" images.clock
-        , Product.mk "product 7" images.strawberries
-        , Product.mk "product 8" images.camera
-        , Product.mk "product 9" images.clock
+        [ Product.mk "BTWIN" images.clock
+        , Product.mk "BTWIN" images.laptop
+        , Product.mk "BTWIN" images.camera
+        , Product.mk "BTWIN" images.strawberries
+        , Product.mk "BTWIN" images.laptop
+        , Product.mk "BTWIN" images.clock
+        , Product.mk "BTWIN" images.strawberries
+        , Product.mk "BTWIN" images.camera
+        , Product.mk "BTWIN" images.clock
         ]
     }
 
@@ -90,7 +90,7 @@ viewCard product =
     div [ class "card-wrapper" ]
         [ div [] [ img [ width 110, height 90, src product.imgUrl ] [] ]
         , div [ class "price-bg" ] [ div [ class "price" ] [ text "249.99€" ] ]
-        , div [] [ text "name" ]
+        , div [ class "name" ] [ text product.name ]
         , div [] [ text "description" ]
         , div [] [ text "review" ]
         ]
