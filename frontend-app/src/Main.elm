@@ -100,15 +100,21 @@ viewAddButton =
 viewRelatedProducts : List Product -> Html Msg
 viewRelatedProducts products =
     div []
-        [ viewTitle
+        [ viewTitle (List.isEmpty products)
         , viewCarousel products
         ]
 
 
-viewTitle : Html Msg
-viewTitle =
+viewTitle : Bool -> Html Msg
+viewTitle listIsEmpty =
     div [ class "related-products-title" ]
-        [ text "Related Products" ]
+        [ case listIsEmpty of
+            True ->
+                text "No related products found!"
+
+            False ->
+                text "Related products"
+        ]
 
 
 viewCarousel : List Product -> Html Msg
