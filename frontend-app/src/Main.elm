@@ -106,7 +106,7 @@ viewStarRating rating =
 
 viewReviews : Int -> Html Msg
 viewReviews numOfReviews =
-    div [] [ text <| "(" ++ String.fromInt numOfReviews ++ ")" ]
+    div [ class "reviews" ] [ text <| "(" ++ String.fromInt numOfReviews ++ ")" ]
 
 
 

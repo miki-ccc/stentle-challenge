@@ -90,6 +90,14 @@
 
 .rating-wrapper {
     display: flex;
+    align-items: center;
     justify-content: center;
     column-gap: 5px;
+}
+
+.reviews {
+    color: #171717;
+    font-size: 8px;
+    font-weight: 400;
+    font-family: Roboto;
 }
