@@ -10,6 +10,31 @@
     margin-bottom: 20px;
 }
 
+.related-products-title {
+    text-align: left;
+    padding-top: 18px;
+    padding-bottom: 16px;
+
+    color: #171717;
+    font-size: 12px;
+    font-family: Roboto;
+}
+
+.carousel-wrapper {
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.card-wrapper {
+    margin-right: 3px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+
+/* === Add button === */
+
 .add-button-font {
     color: #171717;
     font-size: 14px;
@@ -33,35 +58,16 @@
     background-color: #baab00;
 }
 
-.related-products-title {
-    text-align: left;
-    padding-top: 18px;
-    padding-bottom: 16px;
 
-    color: #171717;
-    font-size: 12px;
-    font-family: Roboto;
-}
+/* === Product === */
 
-.carousel-wrapper {
-    display: flex;
-    overflow: auto;
-    white-space: nowrap;
-}
-
-.card-wrapper {
-    margin-right: 3px;
-    border-radius: 3px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.price-bg {
+.product-price-bg {
     border-radius: 2px;
     display: inline-block;
     background-color: #ffea00;
 }
 
-.price {
+.product-price {
     padding: 2px 3px 2px 3px;
 
     color: #171717;
@@ -70,14 +76,14 @@
     font-family: Roboto;
 }
 
-.name {
+.product-name {
     color: #171717;
     font-size: 8px;
     font-weight: 500;
     font-family: Roboto;
 }
 
-.description {
+.product-description {
     max-width: 80%;
     margin: 0 auto;
 
@@ -88,7 +94,7 @@
     font-family: Roboto;
 }
 
-.rating-wrapper {
+.reviews-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,7 +106,7 @@
     font-size: 8px;
 }
 
-.reviews {
+.num-of-reviews {
     color: #171717;
     font-size: 8px;
     font-weight: 400;

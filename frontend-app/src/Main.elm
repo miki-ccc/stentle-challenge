@@ -89,10 +89,10 @@ viewCard : Product -> Html Msg
 viewCard product =
     div [ class "card-wrapper" ]
         [ div [] [ img [ width 110, height 90, src product.imgUrl ] [] ]
-        , div [ class "price-bg" ] [ div [ class "price" ] [ text "249.99€" ] ]
-        , div [ class "name" ] [ text product.name ]
-        , div [ class "description" ] [ text product.description ]
-        , div [ class "rating-wrapper" ]
+        , div [ class "product-price-bg" ] [ div [ class "product-price" ] [ text "249.99€" ] ]
+        , div [ class "product-name" ] [ text product.name ]
+        , div [ class "product-description" ] [ text product.description ]
+        , div [ class "reviews-wrapper" ]
             [ div [] [ viewStarRating product.rating ]
             , div [] [ viewReviews product.numOfReviews ]
             ]
@@ -112,16 +112,14 @@ viewStarRating rating =
 
 star : Html Msg
 star =
-    Html.i
-        [ class "material-icons"
-        , class "star"
-        ]
+    Html.i [ class "material-icons", class "star" ]
         [ text "star" ]
 
 
 viewReviews : Int -> Html Msg
 viewReviews numOfReviews =
-    div [ class "reviews" ] [ text <| "(" ++ String.fromInt numOfReviews ++ ")" ]
+    div [ class "num-of-reviews" ]
+        [ text <| "(" ++ String.fromInt numOfReviews ++ ")" ]
 
 
 
