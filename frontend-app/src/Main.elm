@@ -4,6 +4,7 @@ import Browser
 import Domain.Model.NumOfReviews as NumOfReviews exposing (NumOfReviews)
 import Domain.Model.Price as Price exposing (Price)
 import Domain.Model.Product as Product exposing (Product)
+import Domain.Model.Rating as Rating exposing (Rating)
 import Html exposing (..)
 import Html.Attributes exposing (class, height, src, width)
 
@@ -55,13 +56,14 @@ toList mVal =
 
 initClock : Maybe Product
 initClock =
-    Maybe.map2
+    Maybe.map3
         (Product.mk
             "BTWIN"
             images.clock
             "Mtb bambino 9-12 anni ROCKRIDER ST 500 arancione 26"
         )
         (Price.mk 199.99)
+        (Rating.mk 3)
         (NumOfReviews.mk 135)
 
 
@@ -129,7 +131,7 @@ viewCard product =
         ]
 
 
-viewStarRating : Int -> Html Msg
+viewStarRating : Rating -> Html Msg
 viewStarRating rating =
     div []
         [ star
