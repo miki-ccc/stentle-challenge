@@ -1,5 +1,6 @@
 module Domain.Model.Product exposing (Product, mk)
 
+import Domain.Model.NumOfReviews as NumOfReviews exposing (NumOfReviews)
 import Domain.Model.Price as Price exposing (Price)
 
 
@@ -9,16 +10,16 @@ type alias Product =
     , description : String
     , price : Price
     , rating : Int
-    , numOfReviews : Int
+    , numOfReviews : NumOfReviews
     }
 
 
-mk : String -> String -> String -> Price -> Product
-mk name imgUrl description price =
+mk : String -> String -> String -> Price -> NumOfReviews -> Product
+mk name imgUrl description price numOfReviews =
     Product
         name
         imgUrl
         description
         price
         3
-        155
+        numOfReviews

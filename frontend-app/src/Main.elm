@@ -1,6 +1,7 @@
 module Main exposing (main)
 
 import Browser
+import Domain.Model.NumOfReviews as NumOfReviews exposing (NumOfReviews)
 import Domain.Model.Price as Price exposing (Price)
 import Domain.Model.Product as Product exposing (Product)
 import Html exposing (..)
@@ -54,13 +55,14 @@ toList mVal =
 
 initClock : Maybe Product
 initClock =
-    Maybe.map
+    Maybe.map2
         (Product.mk
             "BTWIN"
             images.clock
             "Mtb bambino 9-12 anni ROCKRIDER ST 500 arancione 26"
         )
         (Price.mk 199.99)
+        (NumOfReviews.mk 135)
 
 
 
@@ -144,10 +146,10 @@ star =
         [ text "star" ]
 
 
-viewReviews : Int -> Html Msg
+viewReviews : NumOfReviews -> Html Msg
 viewReviews numOfReviews =
     div [ class "num-of-reviews" ]
-        [ text <| "(" ++ String.fromInt numOfReviews ++ ")" ]
+        [ text <| "(" ++ String.fromInt (NumOfReviews.toInt numOfReviews) ++ ")" ]
 
 
 
