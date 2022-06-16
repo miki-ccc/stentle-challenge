@@ -38,8 +38,25 @@ initModel =
 view : Model -> Html Msg
 view model =
     div []
-        [ text "Stentle challenge"
+        [ viewMainProduct
+        , viewAddButton
+        , viewRelatedProducts
         ]
+
+
+viewMainProduct : Html Msg
+viewMainProduct =
+    div [] [ text "Main product" ]
+
+
+viewAddButton : Html Msg
+viewAddButton =
+    div [] [ text "Add button" ]
+
+
+viewRelatedProducts : Html Msg
+viewRelatedProducts =
+    div [] [ text "Related products" ]
 
 
 
