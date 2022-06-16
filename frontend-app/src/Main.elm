@@ -3,6 +3,7 @@ module Main exposing (main)
 import Browser
 import Domain.Model.Product as Product exposing (Product)
 import Html exposing (..)
+import Html.Attributes exposing (class)
 import Html.Events exposing (..)
 
 
@@ -37,7 +38,7 @@ initModel =
 
 view : Model -> Html Msg
 view model =
-    div []
+    div [ class "page-wrapper" ]
         [ viewMainProduct
         , viewAddButton
         , viewRelatedProducts
