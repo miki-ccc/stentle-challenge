@@ -1,0 +1,32 @@
+version: '2'
+
+# docker-compose -f npm.yml run --rm install
+# docker-compose -f npm.yml run --rm install <package>@<version>
+# docker-compose -f npm.yml run --rm npx browserslist@latest --update-db
+
+services:
+    base:
+        image: node:12.16.2-alpine
+        volumes:
+            - ./:/data/app
+        working_dir: /data/app
+
+    install:
+        extends:
+            service: base
+        entrypoint: npm install
+
+    uninstall:
+        extends:
+            service: base
+        entrypoint: npm uninstall
+
+    run:
+        extends:
+            service: base
+        entrypoint: npm run
+
+    npx:
+        extends:
+            service: base
+        entrypoint: npx
