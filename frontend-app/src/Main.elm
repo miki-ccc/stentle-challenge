@@ -40,7 +40,7 @@ view model =
     div [ class "page-wrapper" ]
         [ viewMainProduct
         , viewAddButton
-        , viewRelatedProducts
+        , viewRelatedProducts model.relatedProducts
         ]
 
 
@@ -61,9 +61,30 @@ viewAddButton =
         ]
 
 
-viewRelatedProducts : Html Msg
-viewRelatedProducts =
-    div [] [ text "Related products" ]
+viewRelatedProducts : List Product -> Html Msg
+viewRelatedProducts products =
+    div []
+        [ viewTitle
+        , viewCarousel products
+        ]
+
+
+viewTitle : Html Msg
+viewTitle =
+    div [ class "related-products-title" ]
+        [ text "Related Products" ]
+
+
+viewCarousel : List Product -> Html Msg
+viewCarousel products =
+    div [ class "carousel-wrapper" ]
+        (products |> List.map (\product -> viewCard product))
+
+
+viewCard : Product -> Html Msg
+viewCard product =
+    div [ class "card-wrapper" ]
+        [ text product.name ]
 
 
 

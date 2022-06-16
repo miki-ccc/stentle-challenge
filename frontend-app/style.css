@@ -32,3 +32,20 @@
 .add-button:active {
     background-color: #baab00;
 }
+
+.related-products-title {
+}
+
+.carousel-wrapper {
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.card-wrapper {
+    width: 60px;
+    height: 85px;
+    margin-right: 3px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
