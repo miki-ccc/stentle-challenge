@@ -3,7 +3,7 @@ module Main exposing (main)
 import Browser
 import Domain.Model.Product as Product exposing (Product)
 import Html exposing (..)
-import Html.Attributes exposing (class)
+import Html.Attributes exposing (class, height, src, width)
 
 
 
@@ -88,7 +88,12 @@ viewCarousel products =
 viewCard : Product -> Html Msg
 viewCard product =
     div [ class "card-wrapper" ]
-        [ text product.name ]
+        [ div [] [ img [ width 110, height 90, src "" ] [] ]
+        , div [] [ text "price" ]
+        , div [] [ text "name" ]
+        , div [] [ text "description" ]
+        , div [] [ text "review" ]
+        ]
 
 
 

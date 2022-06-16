@@ -50,8 +50,6 @@
 }
 
 .card-wrapper {
-    width: 60px;
-    height: 85px;
     margin-right: 3px;
     border-radius: 3px;
     border: 1px solid rgba(0, 0, 0, 0.08);
