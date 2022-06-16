@@ -1,6 +1,6 @@
 .page-wrapper {
-    width: 40%;
     margin: 0 auto;
+    max-width: 600px;
     text-align: center;
     border: 2px red solid;
 }
