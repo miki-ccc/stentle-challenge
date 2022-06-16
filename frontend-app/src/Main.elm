@@ -51,7 +51,9 @@ viewMainProduct =
 
 viewAddButton : Html Msg
 viewAddButton =
-    div [] [ text "Add button" ]
+    div []
+        [ button [] [ text "AGGIUNGI AL CARRELLO" ]
+        ]
 
 
 viewRelatedProducts : Html Msg
