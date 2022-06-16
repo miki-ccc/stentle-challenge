@@ -34,6 +34,13 @@
 }
 
 .related-products-title {
+    text-align: left;
+    padding-top: 18px;
+    padding-bottom: 16px;
+
+    color: #171717;
+    font-size: 12px;
+    font-family: Roboto;
 }
 
 .carousel-wrapper {
