@@ -89,7 +89,7 @@ viewCard : Product -> Html Msg
 viewCard product =
     div [ class "card-wrapper" ]
         [ div [] [ img [ width 110, height 90, src product.imgUrl ] [] ]
-        , div [] [ text "price" ]
+        , div [ class "price-bg" ] [ div [ class "price" ] [ text "249.99€" ] ]
         , div [] [ text "name" ]
         , div [] [ text "description" ]
         , div [] [ text "review" ]

@@ -54,3 +54,18 @@
     border-radius: 3px;
     border: 1px solid rgba(0, 0, 0, 0.08);
 }
+
+.price-bg {
+    border-radius: 2px;
+    display: inline-block;
+    background-color: #ffea00;
+}
+
+.price {
+    padding: 2px 3px 2px 3px;
+
+    color: #171717;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: Roboto;
+}
