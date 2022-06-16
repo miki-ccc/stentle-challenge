@@ -92,8 +92,21 @@ viewCard product =
         , div [ class "price-bg" ] [ div [ class "price" ] [ text "249.99€" ] ]
         , div [ class "name" ] [ text product.name ]
         , div [ class "description" ] [ text product.description ]
-        , div [] [ text "review" ]
+        , div [ class "rating-wrapper" ]
+            [ div [] [ viewStarRating product.rating ]
+            , div [] [ viewReviews product.numOfReviews ]
+            ]
         ]
+
+
+viewStarRating : Int -> Html Msg
+viewStarRating rating =
+    div [] [ text <| String.fromInt rating ]
+
+
+viewReviews : Int -> Html Msg
+viewReviews numOfReviews =
+    div [] [ text <| "(" ++ String.fromInt numOfReviews ++ ")" ]
 
 
 
