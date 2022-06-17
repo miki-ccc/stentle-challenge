@@ -1,6 +1,7 @@
 module Main exposing (main)
 
 import Browser
+import Components.Carousel as Carousel
 import Components.StarRating as StarRating
 import Domain.Model.NumOfReviews as NumOfReviews exposing (NumOfReviews)
 import Domain.Model.Price as Price exposing (Price)
@@ -92,8 +93,8 @@ viewAddButton =
 viewRelatedProducts : List Product -> Html Msg
 viewRelatedProducts products =
     div []
-        [ viewTitle (List.isEmpty products)
-        , viewCarousel products
+        [ viewTitle (products |> List.isEmpty)
+        , Carousel.view (products |> List.map viewCard)
         ]
 
 
@@ -107,12 +108,6 @@ viewTitle listIsEmpty =
             False ->
                 text "Related products"
         ]
-
-
-viewCarousel : List Product -> Html Msg
-viewCarousel products =
-    div [ class "carousel-wrapper" ]
-        (products |> List.map (\product -> viewCard product))
 
 
 viewCard : Product -> Html Msg
