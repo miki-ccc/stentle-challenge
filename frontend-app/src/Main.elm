@@ -34,30 +34,8 @@ initModel =
         , bike1
         , bike2
         ]
-            |> List.filter (\mVal -> isJust mVal)
-            |> List.map (\mVal -> toList mVal)
-            |> List.concat
+            |> List.filterMap identity
     }
-
-
-isJust : Maybe a -> Bool
-isJust m =
-    case m of
-        Nothing ->
-            False
-
-        Just _ ->
-            True
-
-
-toList : Maybe a -> List a
-toList mVal =
-    case mVal of
-        Just val ->
-            [ val ]
-
-        Nothing ->
-            []
 
 
 
