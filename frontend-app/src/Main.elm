@@ -117,7 +117,7 @@ viewCard product =
         , div [ class "product-price-wrapper" ] [ viewPrice product.price ]
         , div [ class "product-name" ] [ text product.name ]
         , div [ class "product-description" ] [ text product.description ]
-        , div [ class "reviews-wrapper" ]
+        , div [ class "rating-wrapper" ]
             [ div [] [ StarRating.view product.rating ]
             , div [] [ viewReviews product.numOfReviews ]
             ]
