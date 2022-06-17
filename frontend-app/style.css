@@ -109,14 +109,9 @@
     column-gap: 5px;
 }
 
-.star {
-    color: #ffea00;
-    font-size: 8px;
-}
-
 .num-of-reviews {
     color: #171717;
-    font-size: 8px;
+    font-size: 10px;
     font-weight: 400;
     font-family: Roboto;
 }

@@ -1,6 +1,7 @@
 module Main exposing (main)
 
 import Browser
+import Components.StarRating as StarRating
 import Domain.Model.NumOfReviews as NumOfReviews exposing (NumOfReviews)
 import Domain.Model.Price as Price exposing (Price)
 import Domain.Model.Product as Product exposing (Product)
@@ -122,7 +123,7 @@ viewCard product =
         , div [ class "product-name" ] [ text product.name ]
         , div [ class "product-description" ] [ text product.description ]
         , div [ class "reviews-wrapper" ]
-            [ div [] [ viewStarRating product.rating ]
+            [ div [] [ StarRating.view product.rating ]
             , div [] [ viewReviews product.numOfReviews ]
             ]
         ]
@@ -139,23 +140,6 @@ viewPrice price =
         [ div [ class "product-price" ]
             [ text <| (String.fromFloat <| Price.toFloat price) ++ "€" ]
         ]
-
-
-viewStarRating : Rating -> Html Msg
-viewStarRating rating =
-    div []
-        [ star
-        , star
-        , star
-        , star
-        , star
-        ]
-
-
-star : Html Msg
-star =
-    Html.i [ class "material-icons", class "star" ]
-        [ text "star" ]
 
 
 viewReviews : NumOfReviews -> Html Msg
@@ -205,7 +189,7 @@ bike1 =
             "Mtb bambino 5-10 anni ROCKRIDER ST 500 arancione 26\""
         )
         (Price.mk 199.99)
-        (Rating.mk 3)
+        (Rating.mk 4.6)
         (NumOfReviews.mk 115)
 
 
@@ -218,5 +202,5 @@ bike2 =
             "Mtb bambino 9-12 anni ROCKRIDER ST 550 azzurra 28\""
         )
         (Price.mk 249.99)
-        (Rating.mk 4.5)
+        (Rating.mk 3.4)
         (NumOfReviews.mk 174)
