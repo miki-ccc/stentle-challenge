@@ -106,6 +106,7 @@ starPolygon fillAttribute mGradient =
     Svg.svg
         [ Svg.Attributes.width "10"
         , Svg.Attributes.height "10"
+        , Svg.Attributes.style "padding-right: 1px"
         ]
         ([ Svg.polygon
             [ fillAttribute
